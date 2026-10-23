@@ -2282,7 +2282,7 @@ footer {
 }
 
 .btn-solid-new {
-    background: linear-gradient(135deg, #c62828 0%, #d32f2f 45%, #e91e63 100%);
+    background: linear-gradient(135deg, #25D366 0%, #20ba59 50%, #128C7E 100%);
     color: #ffffff;
     padding: 15px 32px;
     border-radius: 50px;
@@ -2294,19 +2294,25 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 8px 22px rgba(198, 40, 40, 0.32);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.32);
     transition: all 0.3s ease;
 }
 
 .btn-solid-new:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(198, 40, 40, 0.42);
-    background: linear-gradient(135deg, #b71c1c 0%, #c62828 50%, #d81b60 100%);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+    background: linear-gradient(135deg, #1fa851 0%, #189849 50%, #0d6e63 100%);
+    color: #ffffff;
+}
+
+.btn-solid-new i {
+    font-size: 1.15rem;
+    color: #ffffff;
 }
 
 .btn-outline-new {
     background-color: #ffffff;
-    color: #c62828;
+    color: #00838f;
     padding: 15px 32px;
     border-radius: 50px;
     text-decoration: none;
@@ -2314,19 +2320,28 @@ footer {
     font-size: 0.95rem;
     letter-spacing: 0.03em;
     font-weight: 700;
-    border: 2px solid #c62828;
+    border: 2px solid #00838f;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 14px rgba(0, 131, 143, 0.1);
     transition: all 0.3s ease;
 }
 
 .btn-outline-new:hover {
-    background-color: #c62828;
+    background-color: #00838f;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(198, 40, 40, 0.25);
+    box-shadow: 0 8px 22px rgba(0, 131, 143, 0.28);
+}
+
+.btn-outline-new i {
+    color: #00838f;
+    transition: color 0.3s ease;
+}
+
+.btn-outline-new:hover i {
+    color: #ffffff;
 }
 
 /* Feature Tag Pills */
