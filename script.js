@@ -387,4 +387,166 @@ document.addEventListener("DOMContentLoaded", () => {
     // Run reveal observer after DOM is ready
     setupScrollReveal();
 
+
+
+    // =========================================================================
+    // 11. Interactive WhatsApp Appointment Booking System (Form & Modal)
+    // =========================================================================
+
+    const clinicPhone = '918015341100';
+
+    // 1. Set default date to today & prevent past dates
+    const today = new Date().toISOString().split('T')[0];
+    const dateInput1 = document.getElementById('booking-date');
+    const dateInput2 = document.getElementById('m-booking-date');
+    if (dateInput1) {
+        dateInput1.min = today;
+        dateInput1.value = today;
+    }
+    if (dateInput2) {
+        dateInput2.min = today;
+        dateInput2.value = today;
+    }
+
+    // 2. Format & Send WhatsApp Appointment Message
+    const handleWhatsAppBooking = (data) => {
+        // Format date to DD-MM-YYYY
+        let formattedDate = data.date;
+        if (data.date && data.date.includes('-')) {
+            const parts = data.date.split('-');
+            if (parts.length === 3) {
+                formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+            }
+        }
+
+        const messageLines = [
+            '🦷 *NEW APPOINTMENT BOOKING*',
+            '*ARS Dental Clinic, Tindivanam*',
+            '────────────────────────',
+            `👤 *Patient Name:* ${data.name.trim()}`,
+            `📱 *Phone Number:* +91 ${data.phone.trim()}`,
+            `🩺 *Treatment:* ${data.treatment}`,
+            `📅 *Preferred Date:* ${formattedDate}`,
+            `⏰ *Time Slot:* ${data.slot}`
+        ];
+
+        if (data.notes && data.notes.trim() !== '') {
+            messageLines.push(`💬 *Note / Problem:* ${data.notes.trim()}`);
+        }
+
+        messageLines.push('────────────────────────');
+        messageLines.push('_Sent via ARS Dental Clinic Website_');
+
+        const fullMessage = messageLines.join('\n');
+        const whatsappUrl = `https://wa.me/${clinicPhone}?text=${encodeURIComponent(fullMessage)}`;
+
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+    };
+
+    // 3. Inline Section Form Handler
+    const inlineForm = document.getElementById('whatsapp-booking-form');
+    if (inlineForm) {
+        inlineForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('patient-name').value;
+            const phone = document.getElementById('patient-phone').value;
+            const treatment = document.getElementById('treatment-select').value;
+            const date = document.getElementById('booking-date').value;
+            const slot = document.getElementById('booking-slot').value;
+            const notes = document.getElementById('patient-notes').value;
+
+            if (!/^[0-9]{10}$/.test(phone.replace(/\D/g, ''))) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            handleWhatsAppBooking({ name, phone, treatment, date, slot, notes });
+        });
+    }
+
+    // 4. Modal Booking Form Handler
+    const bookingModal = document.getElementById('booking-modal');
+    const modalCloseBtn = document.getElementById('booking-modal-close');
+    const modalForm = document.getElementById('modal-whatsapp-form');
+
+    const openBookingModal = (treatmentName) => {
+        if (!bookingModal) return;
+        if (treatmentName) {
+            const selectEl = document.getElementById('m-treatment-select');
+            if (selectEl) {
+                // Find matching option or closest match
+                for (let i = 0; i < selectEl.options.length; i++) {
+                    if (selectEl.options[i].value.toLowerCase().includes(treatmentName.toLowerCase()) || 
+                        treatmentName.toLowerCase().includes(selectEl.options[i].value.toLowerCase())) {
+                        selectEl.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+        bookingModal.classList.add('active');
+        bookingModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => {
+            const nameInput = document.getElementById('m-patient-name');
+            if (nameInput) nameInput.focus();
+        }, 150);
+    };
+
+    const closeBookingModal = () => {
+        if (!bookingModal) return;
+        bookingModal.classList.remove('active');
+        bookingModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeBookingModal);
+    }
+
+    if (bookingModal) {
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('active')) {
+            closeBookingModal();
+        }
+    });
+
+    if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('m-patient-name').value;
+            const phone = document.getElementById('m-patient-phone').value;
+            const treatment = document.getElementById('m-treatment-select').value;
+            const date = document.getElementById('m-booking-date').value;
+            const slot = document.getElementById('m-booking-slot').value;
+            const notes = document.getElementById('m-patient-notes').value;
+
+            if (!/^[0-9]{10}$/.test(phone.replace(/\D/g, ''))) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            handleWhatsAppBooking({ name, phone, treatment, date, slot, notes });
+            closeBookingModal();
+        });
+    }
+
+    // 5. Connect all "Book Consultation" / "Book Appointment" triggers across the page
+    document.querySelectorAll('.trigger-booking-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const treatment = btn.getAttribute('data-treatment') || '';
+            openBookingModal(treatment);
+        });
+    });
+
 });

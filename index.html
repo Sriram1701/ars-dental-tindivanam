@@ -65,6 +65,7 @@
             <li><a href="#Photos" class="nav-menu-btn">Gallery</a></li>
             <li><a href="#patient-feed" class="nav-menu-btn">Happy Patients</a></li>
             <li><a href="#reviews" class="nav-menu-btn">Reviews</a></li>
+            <li><a href="#booking-section" class="nav-menu-btn nav-btn-highlight"><i class="fa-brands fa-whatsapp"></i> Book Appointment</a></li>
             <li><a href="#footer" class="nav-menu-btn">Timing</a></li>
         </ul>
 
@@ -100,7 +101,7 @@
             </div>
 
             <div class="hero-buttons-new">
-                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20ARS%20Dental%20Clinic%2C%20Tindivanam." target="_blank" class="btn-solid-new">
+                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20ARS%20Dental%20Clinic%2C%20Tindivanam." target="_blank" class="btn-solid-new trigger-booking-modal" data-treatment="General Consultation & Checkup">
                     <i class="fa-brands fa-whatsapp"></i> Book Consultation
                 </a>
                 <a href="https://www.google.com/maps/search/?api=1&amp;query=ARS+Dental+Clinic+Marakkanam+Road+Tindivanam+Tamil+Nadu+604001" target="_blank" class="btn-outline-new">
@@ -207,7 +208,7 @@
                     <div class="doc-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Smile Designing &amp; Aligners</div>
                 </div>
                 <div class="specialist-cta-group">
-                    <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20ARS%20Dental%20Clinic%2C%20Tindivanam." target="_blank" class="specialist-cta">
+                    <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20ARS%20Dental%20Clinic%2C%20Tindivanam." target="_blank" class="specialist-cta trigger-booking-modal" data-treatment="General Consultation & Checkup">
                     <i class="fa-brands fa-whatsapp"></i> Book Appointment
                     </a>
                     <a href="tel:+918015341100" class="specialist-call-cta">
@@ -241,7 +242,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Pediatric &amp; Gentle Kids Dentistry</li>
                     <li><i class="fa-solid fa-circle-check"></i> Fluoride &amp; Cavity Prevention</li>
                 </ul>
-                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20a%20General%20Dental%20Care%20consultation%20at%20ARS%20Dental%20Clinic." target="_blank" class="pillar-card-btn">
+                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20a%20General%20Dental%20Care%20consultation%20at%20ARS%20Dental%20Clinic." target="_blank" class="pillar-card-btn trigger-booking-modal" data-treatment="General Dental Care">
                     <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -262,7 +263,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Metal-Free Zirconia Ceramic Crowns</li>
                     <li><i class="fa-solid fa-circle-check"></i> Tooth-Colored Composite Fillings</li>
                 </ul>
-                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20an%20Advanced%20Restorations%20%2F%20Root%20Canal%20consultation%20at%20ARS%20Dental%20Clinic." target="_blank" class="pillar-card-btn">
+                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20an%20Advanced%20Restorations%20%2F%20Root%20Canal%20consultation%20at%20ARS%20Dental%20Clinic." target="_blank" class="pillar-card-btn trigger-booking-modal" data-treatment="Painless Root Canal (RCT)">
                     <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -283,7 +284,7 @@
                     <li><i class="fa-solid fa-circle-check"></i> Laser Teeth Whitening</li>
                     <li><i class="fa-solid fa-circle-check"></i> Cosmetic Smile Makeovers &amp; Veneers</li>
                 </ul>
-                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20a%20Smile%20Makeover%20%2F%20Aligners%20consultation%20at%20ARS%20Dental%20Clinic." target="_blank" class="pillar-card-btn">
+                <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20a%20Smile%20Makeover%20%2F%20Aligners%20consultation%20at%20ARS%20Dental%20Clinic." target="_blank" class="pillar-card-btn trigger-booking-modal" data-treatment="Invisible Aligners & Braces">
                     <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -810,6 +811,113 @@
             </div>
         </section>
 
+        
+    <!-- Dedicated WhatsApp Booking Section -->
+    <section class="whatsapp-booking-section" id="booking-section">
+        <div class="booking-section-container">
+            <div class="booking-info-col">
+                <div class="booking-badge"><i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Booking</div>
+                <h2 class="booking-title">Book Your Dental Consultation</h2>
+                <p class="booking-subtitle">Schedule your appointment with <strong>Dr. Revathi Sudhakar BDS</strong> in 30 seconds. Instant confirmation on WhatsApp with zero advance fee.</p>
+
+                <div class="booking-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <h4>Flexible Timings (All 7 Days)</h4>
+                            <p>Morning: 9:30 AM – 1:30 PM • Evening: 5:00 PM – 9:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                        <div>
+                            <h4>100% Painless &amp; Sterile Protocol</h4>
+                            <p>Autoclaved instruments, gentle anesthesia &amp; safe family care</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Instant WhatsApp Confirmation</h4>
+                            <p>Direct priority booking with Dr. Revathi Sudhakar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-quick-call">
+                    <span>Prefer calling directly?</span>
+                    <a href="tel:+918015341100" class="quick-call-link"><i class="fa-solid fa-phone"></i> +91 80153 41100</a>
+                </div>
+            </div>
+
+            <!-- Interactive Booking Form Card -->
+            <div class="booking-form-col">
+                <div class="booking-form-card">
+                    <div class="form-header">
+                        <div class="form-header-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div>
+                            <h3>Appointment Form</h3>
+                            <p>Fill details to confirm via WhatsApp</p>
+                        </div>
+                    </div>
+
+                    <form id="whatsapp-booking-form" class="clinic-booking-form">
+                        <div class="form-group">
+                            <label for="patient-name"><i class="fa-solid fa-user"></i> Patient Name <span class="required">*</span></label>
+                            <input type="text" id="patient-name" name="patientName" placeholder="Enter patient full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patient-phone"><i class="fa-solid fa-phone"></i> Mobile / WhatsApp Number <span class="required">*</span></label>
+                            <input type="tel" id="patient-phone" name="patientPhone" placeholder="e.g. 98765 43210" pattern="[0-9]{10}" maxlength="10" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="treatment-select"><i class="fa-solid fa-tooth"></i> Select Treatment / Service <span class="required">*</span></label>
+                            <select id="treatment-select" name="treatment" required>
+                                <option value="General Consultation & Checkup">General Consultation &amp; Dental Checkup</option>
+                                <option value="Painless Root Canal (RCT)">Painless Single-Visit Root Canal (RCT)</option>
+                                <option value="Dental Implants">Dental Implants (Titanium &amp; Permanent)</option>
+                                <option value="Zirconia & Ceramic Crowns">Metal-Free Zirconia / Ceramic Crowns</option>
+                                <option value="Invisible Aligners & Braces">Clear Invisible Aligners / Braces</option>
+                                <option value="Teeth Cleaning & Scaling">Ultrasonic Teeth Cleaning &amp; Polishing</option>
+                                <option value="Cosmetic Smile Makeover">Cosmetic Smile Makeover &amp; Veneers</option>
+                                <option value="Pediatric / Gentle Kids Care">Pediatric / Gentle Kids Dentistry</option>
+                                <option value="Tooth Extraction / Emergency">Emergency Toothache Relief / Extraction</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="booking-date"><i class="fa-regular fa-calendar"></i> Preferred Date <span class="required">*</span></label>
+                                <input type="date" id="booking-date" name="bookingDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-slot"><i class="fa-regular fa-clock"></i> Preferred Slot <span class="required">*</span></label>
+                                <select id="booking-slot" name="bookingSlot" required>
+                                    <option value="Morning (9:30 AM – 1:30 PM)">Morning (9:30 AM – 1:30 PM)</option>
+                                    <option value="Evening (5:00 PM – 9:00 PM)">Evening (5:00 PM – 9:00 PM)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patient-notes"><i class="fa-solid fa-comment-medical"></i> Dental Issue / Message (Optional)</label>
+                            <textarea id="patient-notes" name="patientNotes" rows="2" placeholder="e.g. Toothache on left side, consultation for aligners, etc."></textarea>
+                        </div>
+
+                        <button type="submit" id="btn-submit-booking" class="btn-whatsapp-submit">
+                            <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp Now
+                        </button>
+
+                        <p class="form-guarantee-note"><i class="fa-solid fa-circle-check"></i> Direct priority response from Dr. Revathi Sudhakar</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
         <!-- Footer Area (Perfect Symmetric 3-Column Layout) -->
         <footer id="footer">
             <div class="footer-grid">
@@ -873,11 +981,9 @@
 
         <!-- Mobile Fixed Floating Action Layer -->
         <div class="mobile-floating-actions">
-            <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20ARS%20Dental%20Clinic%2C%20Tindivanam." class="float-btn whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://wa.me/918015341100?text=Hi%20Doctor%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20ARS%20Dental%20Clinic%2C%20Tindivanam." class="float-btn whatsapp trigger-booking-modal" data-treatment="General Consultation & Checkup"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             <a href="tel:+918015341100" class="float-btn call"><i class="fa-solid fa-phone"></i> Call</a>
         </div>
-
-        <script src="script.js"></script>
 
 
 
@@ -903,4 +1009,70 @@
             </div>
         </div>
     </div>
+
+    <!-- WHATSAPP APPOINTMENT BOOKING MODAL -->
+    <div id="booking-modal" class="booking-modal-overlay" aria-hidden="true" role="dialog">
+        <div class="booking-modal-content">
+            <button id="booking-modal-close" class="booking-modal-close-btn" aria-label="Close Booking Modal">&times;</button>
+            <div class="modal-form-wrap">
+                <div class="modal-header">
+                    <span class="modal-badge"><i class="fa-brands fa-whatsapp"></i> Quick Booking</span>
+                    <h3>Book Dental Appointment</h3>
+                    <p>ARS Dental Clinic • Dr. Revathi Sudhakar BDS</p>
+                </div>
+                <form id="modal-whatsapp-form" class="clinic-booking-form">
+                    <div class="form-group">
+                        <label for="m-patient-name"><i class="fa-solid fa-user"></i> Patient Name <span class="required">*</span></label>
+                        <input type="text" id="m-patient-name" placeholder="Enter patient name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="m-patient-phone"><i class="fa-solid fa-phone"></i> Mobile Number <span class="required">*</span></label>
+                        <input type="tel" id="m-patient-phone" placeholder="e.g. 98765 43210" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="m-treatment-select"><i class="fa-solid fa-tooth"></i> Treatment <span class="required">*</span></label>
+                        <select id="m-treatment-select" required>
+                            <option value="General Consultation & Checkup">General Consultation &amp; Dental Checkup</option>
+                            <option value="Painless Root Canal (RCT)">Painless Single-Visit Root Canal (RCT)</option>
+                            <option value="Dental Implants">Dental Implants (Titanium &amp; Permanent)</option>
+                            <option value="Zirconia & Ceramic Crowns">Metal-Free Zirconia / Ceramic Crowns</option>
+                            <option value="Invisible Aligners & Braces">Clear Invisible Aligners / Braces</option>
+                            <option value="Teeth Cleaning & Scaling">Ultrasonic Teeth Cleaning &amp; Polishing</option>
+                            <option value="Cosmetic Smile Makeover">Cosmetic Smile Makeover &amp; Veneers</option>
+                            <option value="Pediatric / Gentle Kids Care">Pediatric / Gentle Kids Dentistry</option>
+                            <option value="Tooth Extraction / Emergency">Emergency Toothache Relief / Extraction</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="m-booking-date"><i class="fa-regular fa-calendar"></i> Date <span class="required">*</span></label>
+                            <input type="date" id="m-booking-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="m-booking-slot"><i class="fa-regular fa-clock"></i> Time Slot <span class="required">*</span></label>
+                            <select id="m-booking-slot" required>
+                                <option value="Morning (9:30 AM – 1:30 PM)">Morning (9:30 AM – 1:30 PM)</option>
+                                <option value="Evening (5:00 PM – 9:00 PM)">Evening (5:00 PM – 9:00 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="m-patient-notes"><i class="fa-solid fa-comment-medical"></i> Note / Problem (Optional)</label>
+                        <input type="text" id="m-patient-notes" placeholder="e.g. Toothache, sensitivity, consultation">
+                    </div>
+
+                    <button type="submit" class="btn-whatsapp-submit">
+                        <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+                    </button>
+                    <p class="form-guarantee-note"><i class="fa-solid fa-shield-halved"></i> 100% Free Booking • Instant Confirmation</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body></html>
